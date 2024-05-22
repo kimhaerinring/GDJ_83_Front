@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="checkbox" id="checkAll" class="ch" name="ch">
+    <input type="checkbox" class="ch" name="ch">
+    <input type="checkbox" class="ch" name="ch" >
+    <input type="checkbox" class="ch" name="ch">
+    <input type="checkbox" class="ch" name="ch">
+    <button id="btn" onclick="info()">CLICK</button>
+
+
+    <script>
+        //cheked 속성의 값을 구하시오
+        //chekAll의 속성값이 true면 나머지도 true
+        const checkAll =document.getElementById("checkAll")
+        const ch = document.getElementsByClassName("ch")
+        
+        function info() {
+            if(checkAll.checked){
+                for(i=0;i<ch.length;i++){
+                    ch[i].checked=true;
+                }
+            }else{
+                for(i=0;i<ch.length;i++){
+                    ch[i].checked=false;
+                }
+            }
+        }
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

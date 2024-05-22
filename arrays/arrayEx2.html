@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <img src="/imgs/cat1.jpeg" alt="" id="sc">
+    </div>
+    <button onclick="info()">NEXT</button>
+
+    <script>
+        let ar = ["cat1.jpeg", "dog1.jpeg", "ham1.jpeg", "logo.png", "pan1.jpeg"];
+        let sc= document.getElementById("sc")
+        let n= 0;
+        
+        
+        function info() {
+         
+            if(n==4){
+                alert("마지막페이지입니다")
+                n=-1;
+
+            } 
+            n++
+            let a = ar[n]
+            sc.src = "/imgs/"+a
+        }
+        
+    </script>
+</body>
+
+</html>
