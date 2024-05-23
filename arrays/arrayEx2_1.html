@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <img src="/imgs/cat1.jpeg" alt="" id="result">
+    </div>
+    <button onclick="info()">NEXT</button>
+
+    <script>
+        const result =document.getElementById("result");
+        let ar = ["cat1.jpeg", "dog1.jpeg", "ham1.jpeg", "logo.png", "pan1.jpeg"];
+        let i = 1;
+
+
+        function info(){
+            if(i==5){
+                i=0
+            }
+            result.src="/imgs/"+ar[i];
+            i++
+        }
+        
+    </script>
+</body>
+
+</html>

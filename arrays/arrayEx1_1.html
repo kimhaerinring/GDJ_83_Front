@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <input type="checkbox" id="checkAll" class="ch" name="ch">
+    <input onclick="info()" type="checkbox" id="checkAll" class="ch" name="ch">
     <input type="checkbox" class="ch" name="ch">
     <input type="checkbox" class="ch" name="ch">
     <input type="checkbox" class="ch" name="ch">
@@ -23,16 +23,10 @@
         const ch = document.getElementsByClassName("ch")
 
         function info() {
-           // if (checkAll.checked) {
+          
                 for (let i = 0; i < ch.length; i++) {
                     ch[i].checked = checkAll.checked;
                }
-               
-           // } else {
-             //   for (i = 0; i < ch.length; i++) {
-             //       ch[i].checked = checkAll.checked;
-            //    }
-         //   }
        }
 
 
