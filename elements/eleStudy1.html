@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="info">
+    <button id="btn">Add</button>
+    <ul id="result">
+    </ul>
+
+
+
+    <div id="result2">
+
+    </div>
+    <button id="btn2">Add2</button>
+
+
+    <script>
+        const info = document.getElementById("info");
+        const btn = document.getElementById("btn");
+        const result = document.getElementById("result");
+
+
+        const btn2 = document.getElementById("btn2");
+        const result2 = document.getElementById("result2");
+
+
+        btn.addEventListener("click", function () {
+            let v = info.value
+            //<li></li> 생성
+            let li = document.createElement("li")
+
+            //contents 생성
+            let c = document.createTextNode(v);
+            //<li>abs</li>
+            li.appendChild(c);
+
+            result.append(li);
+        })
+
+
+        btn2.addEventListener("click", function () {
+            //<div></div>
+            let d = document.createElement("div");
+            d.classList.add("abc")
+
+            //<input>
+            let i = document.createElement("input");
+
+            //type="file"
+            /* let a = document.createAttribute("type");
+                        a.value = "file";*/
+            i.type="file"
+            i.name="test"
+            //<input type="file">
+            /*i.setAttributeNode(a);*/
+
+            //<div><input></div> 
+            d.appendChild(i);
+
+            //<span></span>
+            i = document.createElement("span")
+            let t =document.createTextNode("X")
+            i.appendChild(t);
+            d.appendChild(i);  //문자열 객체타입 모두 추가 가능 
+
+            result2.append(d);
+        })
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

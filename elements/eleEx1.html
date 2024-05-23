@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="di">
+        <!--<div>
+            <input type="checkbox">바나나
+        </div>-->
+
+    </div>
+
+    <script>
+        //체크박스 넣고
+        const ar = ['바나나', '수박', '딸기', '망고', '사과'];
+        const di = document.getElementById("di")
+
+
+        for (let i = 0; i <ar.length; i++) {
+            
+                let d = document.createElement("div")
+                let p = document.createElement("input")
+            let g =document.createTextNode(ar[i])
+                p.type="checkbox"
+                //ar.values = "checkbox"   
+
+                d.appendChild(p)
+                d.appendChild(g)
+                di.appendChild(d)
+            
+        }
+        
+
+
+
+
+    </script>
+</body>
+
+</html>
