@@ -8,28 +8,39 @@
 </head>
 
 <body>
-    <input onclick="info()" type="checkbox" id="checkAll" class="ch" name="ch">
-    <input type="checkbox" class="ch" name="ch">
-    <input type="checkbox" class="ch" name="ch">
-    <input type="checkbox" class="ch" name="ch">
-    <input type="checkbox" class="ch" name="ch">
+    <input onclick="info()" type="checkbox" id="checkAll" class="ch" name="ch" title="btn">
+    <input type="checkbox" class="ch" name="ch" title="btn">
+    <input type="checkbox" class="ch" name="ch" title="btn">
+    <input type="checkbox" class="ch" name="ch" title="btn">
+    <input type="checkbox" class="ch" name="ch" title="btn">
     <button id="btn" onclick="info()">CLICK</button>
 
 
     <script>
-        //cheked 속성의 값을 구하시오
-        //chekAll의 속성값이 true면 나머지도 true
         const checkAll = document.getElementById("checkAll")
         const ch = document.getElementsByClassName("ch")
 
+        const btn = document.getElementById("btn")
+
+
         function info() {
-          
-                for (let i = 0; i < ch.length; i++) {
-                    ch[i].checked = checkAll.checked;
-               }
-       }
+            for (let i = 0; i < ch.length; i++) {
+                ch[i].checked = checkAll.checked;
 
+                ch[i].addEventListener("checked", function () {
+                    if(ch[i].checked==true){
+                        
+                    }else{
 
+                    }
+            })
+
+            }
+        }
+
+        
+
+        
     </script>
 
 

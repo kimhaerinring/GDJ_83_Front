@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="frm">
+        <input id="id1" type="text">
+        <input id="id2" type="text">
+        <input type="reset" value="RESERT">
+        <button type="reset">RESET</button> <!--form 안에 있어야힘-->
+    </form>
+
+
+    <script>
+        const id1 = document.getElementById("id1");
+        const id2 = document.getElementById("id2");
+
+        id1.addEventListener("keyup", function () {
+            console.log("keypress");
+        })
+
+        id1.addEventListener("focus", function () {
+            id1.classList.add("bg")
+        })
+
+        id1.addEventListener("blur", function () {
+            id1.classList.remove("bg")
+        })
+
+        id2.addEventListener("change", function () {
+            console.log("값이 변경됨")
+        })
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
