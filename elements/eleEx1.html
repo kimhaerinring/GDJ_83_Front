@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div{
+            text-decoration: line-through;
+        }
+    </style>
 </head>
 
 <body>
@@ -21,20 +26,20 @@
         const di = document.getElementById("di")
 
 
-        for (let i = 0; i <ar.length; i++) {
-            
-                let d = document.createElement("div")
-                let p = document.createElement("input")
-            let g =document.createTextNode(ar[i])
-                p.type="checkbox"
-                //ar.values = "checkbox"   
+        for (let i = 0; i < ar.length; i++) {
 
-                d.appendChild(p)
-                d.appendChild(g)
-                di.appendChild(d)
-            
+            let d = document.createElement("div")
+            let p = document.createElement("input")
+            p.type = "checkbox"
+
+            let g = document.createTextNode(ar[i]) //+ d.append(a[i])
+         
+            d.appendChild(p)
+            d.appendChild(g)
+            di.appendChild(d)
+
         }
-        
+
 
 
 
