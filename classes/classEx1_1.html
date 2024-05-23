@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c2 {
+            border: 3px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" class="c1">
+    </div>
+    <div>
+        <input type="text" class="c1">
+    </div>
+    <div>
+        <input type="text" class="c1">
+    </div>
+    <div>
+        <input type="text" class="c1">
+    </div>
+    <div>
+        <button onclick="info()">CLICK</button>
+    </div>
+
+    <script>
+        //클릭했을때 
+        // input 요소 값이 비어있으면 빨간색 테두리를 주자
+        //값이 있으면 원래대로
+        const c1 = document.getElementsByClassName("c1");//배열
+
+        function info() {
+            for (let i = 0; i < c1.length; i++) {
+                if(c1[i].value==""){
+                    c1[i].classList.add("c2")
+                }else{
+                    c1[i].classList.remove("c2")
+                }
+            }
+
+        }
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
