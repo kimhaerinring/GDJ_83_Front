@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox" onclick="info()" id="checkAll"> <!--전체 선택-->
+        <button class="btn">DELETE</button>
+    </div>
+
+    <div id="result1" class="re">
+        <input type="checkbox" class="ch">
+        <span>mail title1</span>
+    </div>
+    <div id="result2" class="re">
+        <input type="checkbox" class="ch">
+        <span>mail title2</span>
+    </div>
+    <div id="result3" class="re">
+        <input type="checkbox" class="ch">
+        <span>mail title3</span>
+    </div>
+    <div id="result4" class="re">
+        <input type="checkbox" class="ch">
+        <span>mail title4</span>
+    </div>
+    <div id="result5" class="re">
+        <input type="checkbox" class="ch">
+        <span>mail title5</span>
+    </div>
+
+
+    <script>
+
+        const checkAll = document.getElementById("checkAll")
+        const ch = document.getElementsByClassName("ch")
+        const btn = document.getElementsByClassName("btn")
+        const re = document.getElementsByClassName("re")
+
+        for (let i = 0; i < ch.length; i++) {
+            ch[i].addEventListener("click", function () {
+                let flag = true;
+                for (let j = 0; j < ch.length; j++) {
+                    if (!ch[j].checked) {
+                        flag = false;
+                        break;
+                    }
+                }
+                checkAll.checked = flag;
+            })
+        }
+
+        btn[0].addEventListener("click", function () {
+            for (let i = 0; i < ch.length; i++) {
+                if (ch[i].checked) {
+                    document.getElementById(re[i].id).remove()
+                    i--;
+                }
+            }
+        })
+
+
+        function info() {
+            for (let i = 0; i < ch.length; i++) {
+                ch[i].checked = checkAll.checked
+
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
