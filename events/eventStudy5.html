@@ -34,7 +34,7 @@
 
         result.addEventListener("click", function(e) {    //부모를 클릭한건데 부모에 발생한 이벤트(클릭이벤트)를 자식한테 넘겨줌 
             console.log(e)
-            //e.target : button
+            //e.target : button element  == document.getelement의 결과물과 같다
             if(e.target.classList.contains("btns")){
                 console.log("button click")
                 go()
