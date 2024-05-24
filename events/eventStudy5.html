@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 70px;
+        border: 1px solid rebeccapurple;
+
+    }
+</style>
+
+<body>
+    <button class="btns">click1</button>
+    <button class="btns">click2</button>
+    <div id="result"></div>
+    <button id="add">Add</button>
+
+
+    <script> // 집에서 하는 숙제 라인 만들때 참고하기 
+        const btns = document.getElementsByClassName("btns");
+        const add = document.getElementById("add")
+        const result = document.getElementById("result")
+
+
+
+        //test 
+        const b = document.getElementById("b")
+
+        result.addEventListener("click", function(e) {    //부모를 클릭한건데 부모에 발생한 이벤트(클릭이벤트)를 자식한테 넘겨줌 
+            console.log(e)
+            //e.target : button
+            if(e.target.classList.contains("btns")){
+                console.log("button click")
+                go()
+            }
+        })
+
+
+////////////////////////////////////////////////////////////
+
+        add.addEventListener("click", function () {
+            let b = document.createElement("button");
+            b.append("click");
+            b.className = "btns" //button의 클레스 네임이 btns로 변경
+            result.append(b);
+        })
+
+
+
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                console.log("click")
+                go()
+            })
+        }
+
+        function go(){
+            console.log("같은 일을 하자")
+        }
+    </script>
+</body>
+
+</html>
