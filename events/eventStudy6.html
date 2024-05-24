@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="result"></div>
+    <button id="add">add</button>
+
+    <script>
+        const add = document.getElementById("add")
+        const result = document.getElementById("result")
+
+
+        add.addEventListener("click", function () {
+            let i = document.createElement("input");
+            i.type = "checkbox";
+            i.classList.add("ch");
+            result.append(i);
+        })
+
+
+        result.addEventListener("click", function(e){
+           if(e.target.classList.contains("ch")){       
+            //실행해야할 코드 작성 
+           }
+        })
+
+
+
+
+
+    </script>
+</body>
+
+</html>
