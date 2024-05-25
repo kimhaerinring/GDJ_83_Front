@@ -51,14 +51,27 @@
             count++;
         })
         det.addEventListener("click", function () {
-            const checkedItems = document.querySelectorAll('.ch:checked');
-            checkedItems.forEach(item => item.closest('.item').remove());
-        })
+            const checkboxes = document.querySelectorAll('.ch');
+            checkboxes.forEach(function (checkbox) {
+                if (checkbox.checked) {
+                    checkbox.parentElement.remove();
+                }
+            });
+        });
+
         mother.addEventListener('change', function (event) {
-            if (event.target.matches('.ch')) {
-                const parentDiv = event.target.closest('.item');
-                parentDiv.classList.toggle('completed', event.target.checked);
+            if (event.target.classList.contains('ch')) {
+                const checkbox = event.target;
+                const parentDiv = checkbox.parentElement;
+                if (checkbox.checked) {
+                    parentDiv.classList.add('completed');
+                } else {
+                    parentDiv.classList.remove('completed');
+                }
             }
         });
+
+
+
     </script>
 </body>
