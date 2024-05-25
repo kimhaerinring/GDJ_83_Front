@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .completed span {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="inp">
+        <button id="btn">Add</button>
+    </div>
+
+    <div id="mother">
+        <div>
+            <button id="det">휴지통</button>
+        </div>
+
+    </div>
+
+    <script>
+        const inp = document.getElementById("inp")
+        const btn = document.getElementById("btn")
+        const mother = document.getElementById("mother")
+        const det = document.getElementById("det")
+        const ch = document.getElementsByClassName("ch")
+        let count = 0
+
+        btn.addEventListener("click", function () {
+            let it = document.createElement("input")
+            it.type = "checkbox"
+            it.classList.add("ch")
+            let v = inp.value
+            let s = document.createElement("span")
+            s.append(v)
+            let div = document.createElement("div")
+            div.id = "a" + count;
+            let a = document.createAttribute("data-del-num")
+            a.value = "a" + count;
+            it.setAttributeNode(a);
+            div.append(it, s)
+            mother.append(div)
+            count++;
+        })
+        det.addEventListener("click", function () {
+            for (let i = 0; i < ch.length; i++) {
+                if (ch[i].checked) {
+                    document.getElementById(ch[i].getAttribute("data-del-num")).remove()
+                }
+            }
+        })
+        mother.addEventListener('change', function (event) {
+            if (event.target.matches('.ch')) {
+                const span = event.target.nextElementSibling;
+                span.classList.toggle('completed', event.target.checked);
+            }
+        });
+        
+
+
+
+
+    </script>
+</body>
+
+</html>
