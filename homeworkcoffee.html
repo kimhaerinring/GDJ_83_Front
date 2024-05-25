@@ -37,11 +37,14 @@
             let it = document.createElement("input")
             it.type = "checkbox"
             it.classList.add("ch")
+
             let v = inp.value
             let s = document.createElement("span")
             s.append(v)
+
             let div = document.createElement("div")
             div.id = "a" + count;
+            
             let a = document.createAttribute("data-del-num")
             a.value = "a" + count;
             it.setAttributeNode(a);
